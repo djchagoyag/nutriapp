@@ -1,0 +1,40 @@
+ <!-- Brand Logo -->
+    <a href="index.html" class="brand-link navbar-primary">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 "
+           style="opacity: .5">
+      <span class="brand-text font-weight-light text-warning">NUtriApp</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar" ng-include="'template/nutriologo.html'">
+     
+    </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-expand-md nav-light nav-sidebar flex-column" data-widget="collapse" role="menu" data-accordion="false">
+          <li ng-class= "mPaciente">
+            <a href="#/pacientes/1" class="nav-link">
+              <i class=" nav-icon fa fa-user"></i>
+              <p class="text-warning">
+                Paciente
+              </p>
+            </a>
+          </li>
+
+          <li ng-class="mCitas">
+            <a href="#/citas" class="nav-link">
+              <i class=" nav-icon fa fa-calendar"></i>
+              <p class="text-warning">
+                Citas
+                <!--
+              </p>
+            </a>
+          </li>
+        
+        </ul>
+        
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->

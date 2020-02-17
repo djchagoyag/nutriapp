@@ -1,0 +1,93 @@
+<div class="modal fade" id="modal_paciente">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">Paciente: </h4>
+                <button type="button" class="close left" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+
+            </div>
+
+            <form name="frmPaciente" 
+                  ng-submit="guardar(pacienteSel, frmPaciente)"
+                  novalidate="novalidate">
+
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" placeholder="Nombre"
+                               ng-model="pacienteSel.nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Apellido Paterno</label>
+                        <input type="text" class="form-control" placeholder="Paterno"
+                               ng-model="pacienteSel.apellido_paterno"required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Apellido Materno</label>
+                        <input type="text" class="form-control" placeholder="Materno"
+                               ng-model="pacienteSel.apellido_materno">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Edad</label>
+                        <input type="text" class="form-control" placeholder="Edad"
+                               ng-model="pacienteSel.edad" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo</label>
+                        <input type="email" class="form-control" placeholder="Correo"
+                               ng-model="pacienteSel.email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Celular</label>
+                        <input type="text" class="form-control" placeholder="10 dígitos"
+                               ng-model="pacienteSel.celular" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Estatura</label>
+                        <input type="text" class="form-control" placeholder="cm"
+                               ng-model="pacienteSel.estatura"  required>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="text-secondary">Escolaridad</label>
+                        <select type="text" class="form-control" placeholder="Escolaridad"
+                                ng-model="pacienteSel.escolaridad" required>
+                            <option value="1" selected>Educación Básica</option>
+                            <option value="2">Licenciatura</option>
+                            <option value="3">Maestría</option>
+                            <option value="4">Doctorado</option>
+                            <option value="5">Ninguno</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="text-secondary">Estado Civil</label>
+                        <select type="text" class="form-control" placeholder="Estatura"
+                                ng-model="pacienteSel.estado_civil" required>
+                            <option value="1" selected>Soltero</option>
+                            <option value="2">Casado</option>
+                            <option value="3">Divorciado</option>
+                            <option value="4">Complicado</option>
+                        </select>
+                    </div>   
+                </div>
+
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Guardar</button>
+        </div>
+
+        </form>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div>
