@@ -12,9 +12,7 @@
 ### Arquitectura del proyecto ###
 
 * Pacientes - Frontend
-> El frontend contempla...
 * PHP - Backend
-> El backend 
 * Angular - Controladores
 * Pluguins - Frameworks para la vista
 
