@@ -23,7 +23,7 @@
 
                         <div class="form-group">
                             <label class="text-success">Buscar</label>
-                            <input type="text" class="form-control border border-success text-warning" placeholder="Nombre Paciente" ng-model="nombre">
+                            <input type="text" id="buscar" name="buscar" class="form-control border border-success text-warning" placeholder="Nombre Paciente" ng-model="nombre" ng-change="validarInput(nombre)">
                         </div>
 
                     </form>

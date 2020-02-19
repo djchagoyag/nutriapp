@@ -133,7 +133,7 @@ function recuperar_guardarPersonales($inf) {
     guardarFamiliares($acido,11,$id_usuario);
     guardarFamiliares($cancer,12,$id_usuario);
     guardarFamiliares($calculo,13,$id_usuario);
-    guardarFamiliares($otro,1,$id_usuario);
+    guardarFamiliares($otro,14,$id_usuario);
 
 
   }

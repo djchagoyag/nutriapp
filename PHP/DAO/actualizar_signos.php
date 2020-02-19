@@ -19,7 +19,7 @@ $request = (array) $request;
   $unas           = $request['unas'];
   $lengua         = $request['lengua'];
 
-  $alergia        = $request['alergia'];
+  $alergia        = $request['alergias'];
   $mareos         = $request['mareos'];
   $cabeza         = $request['cabeza'];
   $aversion       = $request['aversion'];

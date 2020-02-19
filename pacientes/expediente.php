@@ -50,7 +50,7 @@
 
                                         <div class="form-group" ng-click="MostrarDP()">
                                             <label>Edad</label>
-                                            <input type="text" class="form-control" ng-model="datosPersonales.edad">
+                                            <input type="number" class="form-control" ng-model="datosPersonales.edad">
                                         </div>
 
                                         <div class="form-group" ng-click="MostrarDP()">
@@ -60,25 +60,40 @@
 
                                         <div class="form-group" ng-click="MostrarDP()">
                                             <label>Celular</label>
-                                            <input type="text" class="form-control" ng-model="datosPersonales.celular">
+                                            <input type="number"  minlength="10" maxlength="10" class="form-control" ng-model="datosPersonales.celular">
                                         </div>
 
                                         <div class="form-group" ng-click="MostrarDP()">
                                             <label>Estatura</label>
-                                            <input type="text" class="form-control" ng-model="datosPersonales.estatura">
+                                            <input type="number"  class="form-control" ng-model="datosPersonales.estatura">
                                         </div>
+
+                                       
 
                                         <div class="form-group" ng-click="MostrarDP()">
-                                            <label>Escolaridad</label>
-                                            <input type="text" class="form-control" ng-model="datosPersonales.escolaridad">
-                                        </div>
 
-                                        <div class="form-group" ng-click="MostrarDP()">
-                                            <label>Estado Civil</label>
-                                            <input type="text" class="form-control" ng-model="datosPersonales.estado_civil">
-                                        </div>
+                                            <label class="text-secondary">Escolaridad</label>
+                                                <select type="text" class="form-control" placeholder="Escolaridad"
+                                                 ng-model="datosPersonales.escolaridad" required>
+                                                    <option value="Educación Básica" selected>Educación Básica</option>
+                                                    <option value="Educación Media Superior">Educación Media Superior</option>
+                                                    <option value="Educación Superior">Educación Superior</option>
+                                                    <option value="Ninguno">Ninguno</option>
+                                                </select>
+                                            </div>
 
-                                        <br>
+                                            <div class="form-group" ng-click="MostrarDP()">
+
+                                            <label class="text-secondary">Estado Civil</label>
+                                                <select type="text" class="form-control" placeholder="Estatura"
+                                                    ng-model="datosPersonales.estado_civil" required>
+                                                    <option value="Soltero" selected>Soltero</option>
+                                                    <option value="Casado">Casado</option>
+                                                    <option value="Divorciado">Divorciado</option>
+                                                </select>
+                                            </div>   
+
+                                         <br>
 
 
                                     </div>
@@ -137,10 +152,10 @@
 
                                             <div class="col-sm-6">
                                                 <div class="form-group" ng-click="MostrarA()">
-                                                    <label>Presion</label>
-                                                    <input type="text" class="form-control" placeholder="mmHg" ng-model="asignacion.presion" required>
+                                                    <label>Presión</label>
+                                                    <input type="text" class="form-control" placeholder="mmHg" ng-model="asignacion.presion"  pattern="[0-9]*[/][0-9]*" required>
                                                 </div>
-
+ 
 
                                             </div> 
 
@@ -279,14 +294,7 @@
                                         </div>
 
                                         <div class="row">               
-                                            <div class="col-sm-6">
-                                                <div class="form-group" ng-click="MostrarA()">
-                                                    <label>IMC</label>
-                                                    <input type="text" class="form-control" placeholder="porcentaje" ng-model="asignacion.imc" required>
-                                                </div>
-
-
-                                            </div> 
+                                            
 
                                             <div class="col-sm-6">
 
@@ -345,7 +353,7 @@
                                             <div class="col-sm-6" ng-click="MostrarAG()">
                                                 <div class="form-group">
                                                     <label>Frutas</label>
-                                                    <input type="text" class="form-control" placeholder="Cantidad" ng-model="frutas">
+                                                    <input type="number" class="form-control" placeholder="Cantidad" ng-model="frutas">
                                                 </div>
 
 
@@ -354,7 +362,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group" ng-click="MostrarAG()">
                                                     <label>Verduras</label>
-                                                    <input type="text" class="form-control" placeholder="Cantidad" ng-model="verduras">
+                                                    <input type="number"  class="form-control" placeholder="Cantidad" ng-model="verduras">
                                                 </div>
 
 
@@ -365,7 +373,7 @@
                                             <div class="col-sm-6" ng-click="MostrarAG()">
                                                 <div class="form-group">
                                                     <label>Cereales y Tuberculos </label>
-                                                    <input type="text" class="form-control" placeholder="Cantidad" ng-model="cereales" >
+                                                    <input type="number"  class="form-control" placeholder="Cantidad" ng-model="cereales" >
                                                 </div>
 
 
@@ -374,7 +382,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group" ng-click="MostrarAG()">
                                                     <label>Lacteos</label>
-                                                    <input type="text" class="form-control" placeholder="Cantidad" ng-model="lacteos">
+                                                    <input type="number" class="form-control" placeholder="Cantidad" ng-model="lacteos">
                                                 </div>
 
 
@@ -385,7 +393,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group" ng-click="MostrarAG()">
                                                     <label>Carnes</label>
-                                                    <input type="text" class="form-control" placeholder="Cantidad" ng-model="carnes">
+                                                    <input type="number"  class="form-control" placeholder="Cantidad" ng-model="carnes">
                                                 </div>
 
 
@@ -394,7 +402,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group" ng-click="MostrarAG()">
                                                     <label>Leguminosas</label>
-                                                    <input type="text" class="form-control" placeholder="Cantidad" ng-model="leguminosas">
+                                                    <input type="number" minlength="1" maxlength="2" class="form-control" placeholder="Cantidad" ng-model="leguminosas">
                                                 </div>
 
 
@@ -405,7 +413,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group" ng-click="MostrarAG()">
                                                     <label>Aceites y Grasas</label>
-                                                    <input type="text" class="form-control" placeholder="Cantidad" ng-model="aceites">
+                                                    <input type="number" minlength="1" maxlength="2" class="form-control" placeholder="Cantidad" ng-model="aceites">
                                                 </div>
 
 
@@ -414,7 +422,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group" ng-click="MostrarAG()">
                                                     <label>Azucares</label>
-                                                    <input type="text" class="form-control" placeholder="Cantidad" ng-model="azucares">
+                                                    <input type="number" minlength="1" maxlength="2" class="form-control" placeholder="Cantidad" ng-model="azucares">
                                                 </div>
 
 
@@ -460,7 +468,7 @@
 
                                         <div class="form-group" ng-click="MostrarB()">
                                             <label>Padecimiento Actual</label>
-                                            <input type="text" class="form-control" ng-model="padecimiento_actual.opcion">
+                                            <input type="text" class="form-control" ng-model="padecimiento_actual.sintoma">
                                         </div>
 
                                         <div class="form-group">
@@ -497,7 +505,7 @@
 
                                         <div class="form-group" ng-click="MostrarB()">
                                             <label>Tratamineto Actual</label>
-                                            <input type="text" class="form-control" ng-model="tratamientoActual.opcion">
+                                            <input type="text" class="form-control" ng-model="tratamientoActual.sintoma">
                                         </div>
 
                                         <div class="form-group">
@@ -1118,8 +1126,7 @@
                                     <thead>
                                         <tr>
                                             <th class= "text-primary">Fecha</th>
-                                            <th class= "text-primary">Cintura</th>
-                                            
+                                            <th class= "text-primary">Cintura</th>                                     
                                             <th class= "text-primary">Peso Total</th>
                                             <th class= "text-primary">IMC</th>
                                             <th class= "text-primary">GCT</th>
@@ -1135,8 +1142,7 @@
 
                                         <tr ng-repeat="histIndicadores in histIndicadores" >
                                             <td>{{histIndicadores.fecha}}</td>
-                                            <td>{{histIndicadores.cintura}}</td>
-                                            
+                                            <td>{{histIndicadores.cintura}}</td>                                     
                                             <td>{{histIndicadores.peso}}</td>
                                             <td>{{histIndicadores.imc}}</td>
                                             <td>{{histIndicadores.gct_kilogramos}}</td>

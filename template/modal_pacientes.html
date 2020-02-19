@@ -35,7 +35,7 @@
 
                     <div class="form-group">
                         <label>Edad</label>
-                        <input type="text" class="form-control" placeholder="Edad"
+                        <input type="number"  minlength="1" maxlength="3"class="form-control" placeholder="Edad"
                                ng-model="pacienteSel.edad" required>
                     </div>
 
@@ -47,13 +47,13 @@
 
                     <div class="form-group">
                         <label>Celular</label>
-                        <input type="text" class="form-control" placeholder="10 dígitos"
-                               ng-model="pacienteSel.celular" required>
+                        <input type="number"  minlength="10" maxlength="10" class="form-control" placeholder="10 dígitos"
+                               ng-model="pacienteSel.celular" >
                     </div>
 
                     <div class="form-group">
                         <label>Estatura</label>
-                        <input type="text" class="form-control" placeholder="cm"
+                        <input type="number" minlength="1" maxlength="3" class="form-control" placeholder="cm"
                                ng-model="pacienteSel.estatura"  required>
                     </div>
 
@@ -61,7 +61,7 @@
 
                         <label class="text-secondary">Escolaridad</label>
                         <select type="text" class="form-control" placeholder="Escolaridad"
-                                ng-model="pacienteSel.escolaridad" required>
+                                ng-model="pacienteSel.escolaridad" >
                             <option value="1" selected>Educación Básica</option>
                             <option value="2">Licenciatura</option>
                             <option value="3">Maestría</option>
@@ -74,7 +74,7 @@
 
                         <label class="text-secondary">Estado Civil</label>
                         <select type="text" class="form-control" placeholder="Estatura"
-                                ng-model="pacienteSel.estado_civil" required>
+                                ng-model="pacienteSel.estado_civil" >
                             <option value="1" selected>Soltero</option>
                             <option value="2">Casado</option>
                             <option value="3">Divorciado</option>

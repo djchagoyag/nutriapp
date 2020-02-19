@@ -21,6 +21,9 @@ angular.module('jcs-autoValidate')
             }
         ]);
 
+        
+
+
 
 app.controller('mainCtrl', ['$scope', 'Configuracion', function ($scope, Configuracion) {
 
@@ -91,3 +94,5 @@ app.config(['$routeProvider', function ($routeProvider) {
                 })
 
     }]);
+
+

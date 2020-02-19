@@ -47,6 +47,9 @@ if((count($antecedentesPersonales) > 1) and (count($signos_clinicos) > 1)){
 	$estado = 1;
 	$_SESSION["estado"] = $estado;
 }
+
+
+
 $respuesta = array(
 				'datosPersonales'		  => $datosPersonales,
 				'antecedentes_personales' => $antecedentesPersonales,
@@ -67,28 +70,6 @@ $json = json_encode($respuesta);
 
 
 
-
-
-
-
-/*
-//echo $id;
-$sel = new DbCrud();
-
-
-
-$pacSel = $sel->select("usuarios",null,null,null,null,null,"$idPAc");
-
-
-
-
-$respuesta = array(
-				'datosPersonales' => $pacSel);
-
-
-$json = json_encode($respuesta);
-
-//print_r($respuesta);*/
 echo $json;
 
 ?>

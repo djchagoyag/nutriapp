@@ -42,6 +42,9 @@ app.controller('pacientesCtrl', ['$scope', 'Pacientes', '$routeParams', function
 
             Pacientes.cargarPaginaPorNombre(pag).then(function () {
 
+               
+               
+                
                 $scope.pacientes = Pacientes.usuarios;
                 $scope.paginacion = Pacientes;
 
@@ -69,12 +72,13 @@ app.controller('pacientesCtrl', ['$scope', 'Pacientes', '$routeParams', function
         $scope.moverBusqueda = function (pag, nombre) {
 
             Pacientes.cargarBusqueda(pag, nombre).then(function () {
-
+                
+               
+               
                 $scope.pacientes = Pacientes.usuarios;
                 $scope.paginacion = Pacientes;
 
                 $scope.numPaginas = Pacientes.paginas;
-
 
             });
 
@@ -113,20 +117,25 @@ app.controller('pacientesCtrl', ['$scope', 'Pacientes', '$routeParams', function
 
             Pacientes.buscar(usuario).then(function () {
 
+
                 $scope.usuario = Pacientes.usuarios;
 
 
             });
         }
-        //Cuando eliges un usuario lo reemplaza en el campo de texto
+        
         $scope.cambiausuario = function (usuario) {
             $scope.usuario = usuario;
             $scope.usuarios = null;
         }
 
 
+        $scope.validarInput = function (nombre){
 
+            if(nombre == ""){
+                $scope.moverA(pag);
+            }
 
+        }
 
     }]);
-

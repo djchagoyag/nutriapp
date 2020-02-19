@@ -18,7 +18,6 @@ $complexion 	 = $request['complexion'];
 $edad_metabolica = $request['edad_metabolica'];
 $gct 			 = $request['gct'];
 $grasa           = $request['grasa'];
-$imc             = $request['imc'];
 $kilocalorias    = $request['kilocalorias'];
 $morfologia      = $request['morfologia'];
 $muneca          = $request['muneca'];
@@ -28,6 +27,23 @@ $musculo		 = $request['porciento_musculo'];
 $presion 		 = $request['presion'];
 $pulso		     = $request['pulso'];
 $id_usuario		 = $_SESSION[id_usuario];
+
+$sel = new DbCrud();
+
+$recuperarEstatura        =   $sel->select("usuarios",array("estatura"),$id_usuario);
+
+$estatura = (int)$recuperarEstatura[0]["estatura"];
+$estatura = $estatura/100;
+
+$pesoInt = (int) $peso;
+
+$imc1 = $pesoInt /($estatura*$estatura);
+
+$imc = round($imc1, 2);
+
+
+
+
 
 
  $datos = array(

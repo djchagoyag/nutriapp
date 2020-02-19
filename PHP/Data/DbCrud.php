@@ -89,7 +89,7 @@ class DbCrud {
             $sql .= "FROM `$tabla`";
             if ($nombre != null) {
 
-                $sql .= " WHERE nombre = $nombre";
+                $sql .= " WHERE id = $nombre";
             }
 
            
@@ -112,7 +112,7 @@ class DbCrud {
         }
         if($id_usuario != null){
 
-            $sql = "SELECT * from $tabla  WHERE id_usuario = $id_usuario";
+            $sql = "SELECT * from $tabla  WHERE id_usuario = $id_usuario ORDER BY id DESC";
 
 
         }

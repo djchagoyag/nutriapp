@@ -11,9 +11,24 @@ app.controller('expedientesCtrl', ['$scope', '$routeParams', 'Expedientes', func
         $scope.SC    = true;
         $scope.AG    = true;
 
-        var id = $routeParams.id;
+        var id                  = $routeParams.id;
+        /*var padecimiento_actual = $routeParams.padecimiento_actual; 
+        var respiratorias       = $routeParams.respiratorias;
+        var gastrointestinales  = $routeParams.gastrointestinales;
+        var tratamientoActual   = $routeParams.tratamientoActual;
+        var desparacitaciones   = $routeParams.desparacitaciones;
+        var cirugias            = $routeParams.cirugias;
+        var diabetes            = $routeParams.diabetes;
+        var hipertension        = $routeParams.hipertension;
+        var ecv                 = $routeParams.ecv;
+        var dislipidemias       = $routeParams.dislipidemias;
+        var acido               = $routeParams.acido;
+        var cancer              = $routeParams.cancer;
+        var calculo             = $routeParams.calculo;
+        var otro                = $routeParams.otro;
+        var frmAnteceddentes    = $routeParams.frmAnteceddentes;*/
 
-        console.log(id);
+        
 
 
         $scope.datos           = {};
@@ -64,6 +79,8 @@ app.controller('expedientesCtrl', ['$scope', '$routeParams', 'Expedientes', func
          $scope.com = {};
          $scope.col2 = {};
          $scope.cen = {};
+
+
        
 
         $scope.recuperarExpediente = function (id) {
@@ -74,8 +91,12 @@ app.controller('expedientesCtrl', ['$scope', '$routeParams', 'Expedientes', func
                 $scope.datos = Expedientes.datosPersonales;
 
                 $scope.datosPersonales = $scope.datos[0];
+                $scope.datosPersonales['edad']      = parseInt($scope.datosPersonales['edad'],10);
+                $scope.datosPersonales['celular']   = parseInt($scope.datosPersonales['celular'],10);
+                $scope.datosPersonales['estatura']  = parseInt($scope.datosPersonales['estatura'],10);
+                
 //=============Ant Personales======================
-                $scope.antPersonales = Expedientes.antecedentes_personales;
+                $scope.antPersonales        = Expedientes.antecedentes_personales;
 
                 $scope.padecimiento_actual  = $scope.antPersonales[0];
                 $scope.respiratorias        = $scope.antPersonales[1];
@@ -84,40 +105,41 @@ app.controller('expedientesCtrl', ['$scope', '$routeParams', 'Expedientes', func
                 $scope.desparacitaciones    = $scope.antPersonales[4];
                 $scope.cirugias             = $scope.antPersonales[5];
 //==============Ant Familiares====================
-                $scope.antFamiliares = Expedientes.antecedentes_familiares;
+                $scope.antFamiliares    = Expedientes.antecedentes_familiares;
 
-                $scope.diabetes         = $scope.antFamiliares[0];
-                $scope.hipertension     = $scope.antFamiliares[1];
-                $scope.ecv              = $scope.antFamiliares[2];
-                $scope.dislipidemias    = $scope.antFamiliares[3];
-                $scope.acido            = $scope.antFamiliares[4];
-                $scope.cancer           = $scope.antFamiliares[5];
-                $scope.calculo          = $scope.antFamiliares[6];
-                $scope.otro             = $scope.antFamiliares[7];
+                $scope.diabetes         = $scope.antFamiliares[7];
+                $scope.hipertension     = $scope.antFamiliares[6];
+                $scope.ecv              = $scope.antFamiliares[5];
+                $scope.dislipidemias    = $scope.antFamiliares[4];
+                $scope.acido            = $scope.antFamiliares[3];
+                $scope.cancer           = $scope.antFamiliares[2];
+                $scope.calculo          = $scope.antFamiliares[1];
+                $scope.otro             = $scope.antFamiliares[0];
 
 //============== Signos Clinicos =====================
                 $scope.signos_clinicos = Expedientes.signos_clinicos;
 
-                $scope.piel         = $scope.signos_clinicos[0];
-                $scope.ojos         = $scope.signos_clinicos[1];
-                $scope.boca         = $scope.signos_clinicos[2];
-                $scope.lengua       = $scope.signos_clinicos[3];
-                $scope.cabello      = $scope.signos_clinicos[4];
-                $scope.unas         = $scope.signos_clinicos[5];
+                $scope.piel         = $scope.signos_clinicos[12];
+                $scope.ojos         = $scope.signos_clinicos[11];
+                $scope.boca         = $scope.signos_clinicos[10];
+                $scope.lengua       = $scope.signos_clinicos[9];
+                $scope.cabello      = $scope.signos_clinicos[8];
+                $scope.unas         = $scope.signos_clinicos[7];
                 $scope.alergias     = $scope.signos_clinicos[6];
-                $scope.mareos       = $scope.signos_clinicos[7];
-                $scope.cabeza       = $scope.signos_clinicos[8];
-                $scope.aversion     = $scope.signos_clinicos[9];
-                $scope.gustos       = $scope.signos_clinicos[10];
-                $scope.intolerancia = $scope.signos_clinicos[11];
-                $scope.articulacion = $scope.signos_clinicos[12];
+                $scope.mareos       = $scope.signos_clinicos[5];
+                $scope.cabeza       = $scope.signos_clinicos[4];
+                $scope.aversion     = $scope.signos_clinicos[3];
+                $scope.gustos       = $scope.signos_clinicos[2];
+                $scope.intolerancia = $scope.signos_clinicos[1];
+                $scope.articulacion = $scope.signos_clinicos[0];
 
                 $scope.histIndicadores = Expedientes.historial_indicadores;
 
-                $scope.asignacion = Expedientes.asignacionGrupo;
+                $scope.asignacion      = Expedientes.asignacionGrupo;
 
             });
         };
+
 
         $scope.guardr = function (asignacion, frmAsignacion) {
             Expedientes.guardar(asignacion).then(function () {
@@ -130,9 +152,13 @@ app.controller('expedientesCtrl', ['$scope', '$routeParams', 'Expedientes', func
         };
 
         $scope.actualizarDP = function (paciente, frmDatosPersonales) {
+
+            //$scope.actualizarAntecedentes(padecimiento_actual, respiratorias, gastrointestinales, tratamientoActual, desparacitaciones, cirugias, diabetes, hipertension, ecv, dislipidemias, acido, cancer, calculo, otro, frmAnteceddentes);
             
             Expedientes.actualizarDatosP(paciente).then(function () {
 
+                
+                
                 frmDatosPersonales.autoValidateFormOptions.resetForm();
 
                 window.location.reload();
@@ -163,7 +189,7 @@ app.controller('expedientesCtrl', ['$scope', '$routeParams', 'Expedientes', func
 
             sc = {piel,ojos,boca,lengua,cabello,unas,articulacion,mareos,cabeza,alergias,intolerancia,aversion,gustos};
 
-            console.log(sc);
+            
 
             Expedientes.actualizarSignos(sc).then(function () {
 
@@ -178,10 +204,7 @@ app.controller('expedientesCtrl', ['$scope', '$routeParams', 'Expedientes', func
 
         $scope.guardarAsignacion = function (frutas,verduras,cereales,lacteos,carnes,leguminosas,aceites,azucares,frmAsignacionGrupo) {
             
-
             sc = {frutas,verduras,cereales,lacteos,carnes,leguminosas,aceites,azucares};
-
-            
 
             Expedientes.guardar_asignacion(sc).then(function () {
 
@@ -199,11 +222,11 @@ app.controller('expedientesCtrl', ['$scope', '$routeParams', 'Expedientes', func
 
             Expedientes.generarDistribucion(id).then(function () {
 
-                $scope.des = Expedientes.desayuno;
+                $scope.des  = Expedientes.desayuno;
                 $scope.col1 = Expedientes.colacion1;
-                $scope.com = Expedientes.comida;
+                $scope.com  = Expedientes.comida;
                 $scope.col2 = Expedientes.colacion2;
-                $scope.cen = Expedientes.cena;
+                $scope.cen  = Expedientes.cena;
 
             });
         };
@@ -218,10 +241,9 @@ app.controller('expedientesCtrl', ['$scope', '$routeParams', 'Expedientes', func
 
 
         $scope.MostrarDP = function () {
+
+            
             $scope.DP = false;
-
-            actualizarDP(datosPersonales, frmDatosPersonales);
-
         };
 
 
@@ -248,6 +270,8 @@ app.controller('expedientesCtrl', ['$scope', '$routeParams', 'Expedientes', func
             $scope.generarDistribucion(id);
 
         };
+
+        
 
         
 //console.log(id);
